@@ -62,6 +62,6 @@ $ python3 log4j-filescan.py -v /caminho/desejado
 $ python3 log4j-filescan.py -vv /caminho/desejado
 ```
 
-## Notas Importantes
+## Nota Importante
 
 Arquivos e/ou diretórios que não puderem ser acessados (permissão de acesso negado) não serão listados.
