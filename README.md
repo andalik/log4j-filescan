@@ -19,10 +19,10 @@ O script pode ser baixado e utilizado de 2 formas distintas:
 ### 1. Usando Binário (Piece of Cake Mode)
 
 Para facilitar ainda mais, compilamos tudo e disponibilizamos um binário executável.  
-Basta baixar a versão para seu Sistema Operacional:  
+Basta baixar a versão para seu Sistema Operacional, abrir o prompt de comando e executar:  
 
- * Windows: [log4j-filescan.exe](https://github.com/andalik/log4j-filescan/releases/latest/download/log4j-filescan.exe)  
- * Linux: [log4j-filescan](https://github.com/andalik/log4j-filescan/releases/latest/download/log4j-filescan)  
+ * Windows: [log4j-filescan.exe](https://github.com/andalik/log4j-filescan/releases/download/v1.0.0/log4j-filescan.exe)  
+ * Linux: [log4j-filescan](https://github.com/andalik/log4j-filescan/releases/download/v1.0.0/log4j-filescan)  
 
 No Linux, via console, você também pode utilizar o wget para obter o binário:  
 
