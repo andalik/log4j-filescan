@@ -39,6 +39,14 @@ wget https://github.com/andalik/log4j-filescan/raw/main/log4j-filescan.py
 sudo python3 log4j-filescan.py
 ```
 
+### Erro UTF-8 na Execução do Binário Linux
+
+No Linux, caso ocorra algum problema na execução do binário, execute o seguinte comando:
+
+```bash
+export LC_ALL=$(locale -a | grep UTF-8)
+```
+
 ## Exemplos de Uso
 
 1. Varredura em um diretório específico (padrão é /):  
