@@ -10,6 +10,8 @@ Simples e direto ao ponto... Não requer prática, nem tão pouco habilidade!
 Log4j-FileScan é um script desenvolvido em Python 3 para realizar a varredura completa de um filesystem buscando por versões vulneráveis do framework Log4j2 conforme descrito na CVE-2021-44228 e CVE-2021-45046.  
 A varredura é realizada recursivamente tanto em disco quanto dentro de arquivos Java Archive (JARs).  
 
+![log4j-filescan](https://github.com/andalik/log4j-filescan/blob/master/screenshot.png)
+
 ## Download e Execução
 
 O script pode ser baixado e utilizado de 2 formas distintas:  
