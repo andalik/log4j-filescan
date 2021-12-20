@@ -27,7 +27,7 @@ Basta baixar a versão para seu Sistema Operacional, abrir o prompt de comando e
 No Linux, via console, você também pode utilizar o wget para obter o binário:  
 
 ```bash
-wget https://github.com/andalik/log4j-filescan/releases/latest/download/log4j-filescan -O log4j-filescan
+wget https://github.com/andalik/log4j-filescan/releases/download/v1.0.0/log4j-filescan -O log4j-filescan
 chmod +x log4j-filescan
 sudo ./log4j-filescan
 ```
