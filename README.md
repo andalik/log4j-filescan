@@ -53,6 +53,8 @@ export LC_ALL=$(locale -a | grep UTF-8)
 
 1. Varredura em um diretório específico (padrão é /):  
 ```bash
+$ python3 log4j-filescan.py
+ou
 $ python3 log4j-filescan.py /caminho/desejado
 ```
 
