@@ -12,6 +12,15 @@ A varredura é realizada recursivamente tanto em disco quanto dentro de arquivos
 
 ![log4j-filescan](https://github.com/andalik/log4j-filescan/blob/main/screenshot.png)
 
+## Funcionamento
+
+Para otimizar a velocidade da varredura, a busca ocorre SOMENTE nos arquivos relacionados ao problema:
+
+ * Todos os arquivos com extensão `Java ARchive`:
+    *  `*.jar`, `*.war`, `*.ear`
+
+Se um arquivo com uma das extensões mencionadas acima é localizado, ocorre a varredura dos arquivos internos (tudo em memória).
+
 ## Download e Execução
 
 O script pode ser baixado e utilizado de 2 formas distintas:  
@@ -21,8 +30,10 @@ O script pode ser baixado e utilizado de 2 formas distintas:
 Para facilitar ainda mais, compilamos tudo e disponibilizamos um binário executável.  
 Basta baixar a versão para seu Sistema Operacional, abrir o prompt de comando e executar:  
 
- * Windows: [log4j-filescan.exe](https://github.com/andalik/log4j-filescan/releases/download/v1.0.0/log4j-filescan.exe)  
- * Linux: [log4j-filescan](https://github.com/andalik/log4j-filescan/releases/download/v1.0.0/log4j-filescan)  
+ * Windows: [log4j-filescan.exe](https://github.com/andalik/log4j-filescan/releases/download/v1.1.0/log4j-filescan.exe)
+   IMPORTANTE: Devido o uso do Pyinstaller para empacotar tudo em um executável, alguns antivirus podem disparar um alerta falso-positivo. Caso ocorra, inclua o arquivo executável na lista de Exclusões.
+   
+ * Linux: [log4j-filescan](https://github.com/andalik/log4j-filescan/releases/download/v1.1.0/log4j-filescan)  
 
 No Linux, via console, você também pode utilizar o wget para obter o binário:  
 
@@ -34,19 +45,51 @@ sudo ./log4j-filescan
 
 ### 2. Usando Python 3
 
-Para distribuições Linux com Python 3 instalado, utilize um dos métodos abaixo:  
+Para distribuições Linux com Python 3.6+ instalado, utilize um dos métodos abaixo:  
 
 ```bash
 wget https://github.com/andalik/log4j-filescan/raw/main/log4j-filescan.py
+export LC_ALL=$(locale -a | grep UTF-8)
 sudo python3 log4j-filescan.py
 ```
 
-### Erro UTF-8 na Execução do Binário Linux
+# Criando executáveis
 
-No Linux, caso ocorra algum problema na execução do binário, execute o seguinte comando:
+### Criando executável Windows
+
+1. Baixar Python 3.6 ou superior em https://www.python.org/downloads/
+
+   * Certifique-se, durante a instalacão, de selecionar a opção `Add Python 3.x to PATH`.
+
+2. Abrir o prompt de comando e executar `pip` para instalar o `pyinstaller`:
+
+   ```bash
+   pip install pyinstaller
+   pip install colorama
+   ```
+
+3. Baixar a última versão do script `log4j-filescan.py` e executar o PyInstaller:
+
+   ```bash
+   pyinstaller --onefile --hidden-import colorama log4j-filescan.py
+   ```
+
+O executável Windows será criado no diretório `dist`: `dist\log4j-filescan.exe`
+
+### Criando executável Linux
+
+Examplo para Debian 11:
 
 ```bash
-export LC_ALL=$(locale -a | grep UTF-8)
+sudo apt update
+sudo apt install python3-pip git
+pip3 install --user pyinstaller
+
+git clone https://github.com/andalik/log4j-filescan
+cd log4j-filescan
+~/.local/bin/pyinstaller --onefile log4j-filescan.spec
+
+./dist/log4j-finder --help
 ```
 
 ## Exemplos de Uso
@@ -68,12 +111,24 @@ $ python3 log4j-filescan.py /caminho/arquivo.jar
 $ python3 log4j-filescan.py /caminho/dir1 /caminho/dir2 /caminho/arquivo.jar
 ```
 
+4. Varredura excluindo alguns arquivos e/ou diretórios
+```bash
+$ python3 log4j-filescan.py / --exclude "/caminho/*.war"
+```
+
 4. Verbose ou Modo Debug:  
 ```bash
 $ python3 log4j-filescan.py -v /caminho/desejado
 $ python3 log4j-filescan.py -vv /caminho/desejado
 ```
 
-## Nota Importante
+## Notas Importantes
 
-Arquivos e/ou diretórios que não puderem ser acessados (permissão de acesso negado) não serão listados.
+1. No Windows, por padrão, a varredura ocorrerá apenas em `c:\`.
+Recomendamos especificar as unidades adicionais para varredura na linha de comando (as unidades inexistentes serão ignoradas):
+
+```bash
+log4j-filescan.exe c:\ d:\ e:\ f:\
+```
+
+2. Arquivos e/ou diretórios que não puderem ser acessados (permissão de acesso negado) não serão listados.
