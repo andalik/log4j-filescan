@@ -53,7 +53,7 @@ export LC_ALL=$(locale -a | grep UTF-8)
 sudo python3 log4j-filescan.py
 ```
 
-# Criando executáveis
+## Criando executáveis
 
 ### Criando executável Windows
 
