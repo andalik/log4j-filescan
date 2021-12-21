@@ -30,8 +30,8 @@ O script pode ser baixado e utilizado de 2 formas distintas:
 Para facilitar ainda mais, compilamos tudo e disponibilizamos um binário executável.  
 Basta baixar a versão para seu Sistema Operacional, abrir o prompt de comando e executar:  
 
- * Windows: [log4j-filescan.exe](https://github.com/andalik/log4j-filescan/releases/download/v1.1.0/log4j-filescan.exe)
-   IMPORTANTE: Devido o uso do Pyinstaller para empacotar tudo em um executável, alguns antivirus podem disparar um alerta falso-positivo. Caso ocorra, inclua o arquivo executável na lista de Exclusões.
+ * Windows: [log4j-filescan.exe](https://github.com/andalik/log4j-filescan/releases/download/v1.1.0/log4j-filescan.exe)  
+   IMPORTANTE: Devido o uso do Pyinstaller para empacotar tudo em um executável, alguns antivirus podem disparar um alerta falso-positivo. Caso ocorra, inclua o arquivo executável na lista de Exclusões.  
    
  * Linux: [log4j-filescan](https://github.com/andalik/log4j-filescan/releases/download/v1.1.0/log4j-filescan)  
 
@@ -124,7 +124,7 @@ $ python3 log4j-filescan.py -vv /caminho/desejado
 
 ## Notas Importantes
 
-1. No Windows, por padrão, a varredura ocorrerá apenas em `c:\`.
+1. No Windows, por padrão, a varredura ocorrerá apenas em `c:\`.  
 Recomendamos especificar as unidades adicionais para varredura na linha de comando (as unidades inexistentes serão ignoradas):
 
 ```bash
