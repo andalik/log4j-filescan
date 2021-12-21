@@ -124,11 +124,11 @@ $ python3 log4j-filescan.py -vv /caminho/desejado
 
 ## Notas Importantes
 
-1. No Windows, por padrão, a varredura ocorrerá apenas em `c:\`.  
+* No Windows, por padrão, a varredura ocorrerá apenas em `c:\`.  
 Recomendamos especificar as unidades adicionais para varredura na linha de comando (as unidades inexistentes serão ignoradas):
 
 ```bash
 log4j-filescan.exe c:\ d:\ e:\ f:\
 ```
 
-2. Arquivos e/ou diretórios que não puderem ser acessados (permissão de acesso negado) não serão listados.
+* Arquivos e/ou diretórios que não puderem ser acessados (permissão de acesso negado) não serão listados.
