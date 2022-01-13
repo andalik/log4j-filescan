@@ -31,8 +31,8 @@ Para facilitar ainda mais, compilamos tudo e disponibilizamos um binário execut
 Basta baixar a versão para seu Sistema Operacional, abrir o prompt de comando e executar:  
 
  * Windows: [log4j-filescan.exe](https://github.com/andalik/log4j-filescan/releases/download/v1.1.1/log4j-filescan.exe)  
-   <span style="color:red">IMPORTANTE: Devido o uso do Pyinstaller para empacotar tudo em um executável, alguns antivirus podem disparar um alerta falso-positivo. Caso ocorra, inclua o arquivo executável na lista de Exclusões.</span>  
-   
+   <span style="color:red">IMPORTANTE: Devido ao modelo de empacotamento proporcionado pelo PyInstaller (tudo em um único executável), alguns antivírus podem gerar um alerta falso-positivo. Desta forma, basta incluir o executável na lista de excessões do seu antivírus.</span>  
+
  * Linux: [log4j-filescan](https://github.com/andalik/log4j-filescan/releases/download/v1.1.1/log4j-filescan)  
 
 No Linux, via console, você também pode utilizar o wget para obter o binário:  
@@ -98,7 +98,8 @@ cd log4j-filescan
 ```bash
 $ python3 log4j-filescan.py
 ou
-$ python3 log4j-filescan.py /caminho/desejado
+$ python3 log4j-filescan.py /caminho/desejado (no Linux)
+$ python3 log4j-filescan.py d:\ (no Windows)
 ```
 
 2. Varredura em um arquivo JAR:  
@@ -124,11 +125,14 @@ $ python3 log4j-filescan.py -vv /caminho/desejado
 
 ## Notas Importantes
 
-* No Windows, por padrão, a varredura ocorrerá apenas em `c:\`.  
-Recomendamos especificar as unidades adicionais para varredura na linha de comando (as unidades inexistentes serão ignoradas):
+* No Windows, se nenhuma unidade for informada, a varredura ocorrerá apenas em `c:\`.  
+Entretanto, é possível especificar todas as unidades físicas do computador para varredura de uma única vez.  
 
+Abra o Powershell (de preferência com “Run as Administrator”) e digite:  
 ```bash
-log4j-filescan.exe c:\ d:\ e:\ f:\
+python3 log4j-filescan.py c:\ d:\ e:\
 ```
+
+A ferramenta realizará a varredura no C:\, depois no D: e por fim E:\. Se alguma unidade não existir, a ferramenta simplesmente ignorará a unidade informada sem apresentar erro. Tudo ficará registrado na tela (quais arquivos vulneráveis encontrados em qual unidade).  
 
 * Arquivos e/ou diretórios que não puderem ser acessados (permissão de acesso negado) não serão listados.
