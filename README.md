@@ -7,7 +7,7 @@ by Renato Andalik (@andalik)
 </pre>
 
 Simples e direto ao ponto... Não requer prática, nem tão pouco habilidade!  
-Log4j-FileScan é um script desenvolvido em Python 3 para realizar a varredura completa de um filesystem buscando por versões vulneráveis do framework Log4j2 conforme descrito na CVE-2021-44228 e CVE-2021-45046.  
+Log4j-FileScan é um script desenvolvido em Python 3 para realizar a varredura completa de um filesystem buscando por versões vulneráveis do framework Log4j2 conforme descrito na CVE-2021-44228, CVE-2021-45046, CVE-2021-45105 e CVE-2021-44832.  
 A varredura é realizada recursivamente tanto em disco quanto dentro de arquivos Java Archive (JARs).  
 
 ![log4j-filescan](https://github.com/andalik/log4j-filescan/blob/main/docs/screenshots/log4j-filescan1.png)
@@ -30,15 +30,15 @@ O script pode ser baixado e utilizado de 2 formas distintas:
 Para facilitar ainda mais, compilamos tudo e disponibilizamos um binário executável.  
 Basta baixar a versão para seu Sistema Operacional, abrir o prompt de comando e executar:  
 
- * Windows: [log4j-filescan.exe](https://github.com/andalik/log4j-filescan/releases/download/v1.1.0/log4j-filescan.exe)  
+ * Windows: [log4j-filescan.exe](https://github.com/andalik/log4j-filescan/releases/download/v1.1.1/log4j-filescan.exe)  
    IMPORTANTE: Devido o uso do Pyinstaller para empacotar tudo em um executável, alguns antivirus podem disparar um alerta falso-positivo. Caso ocorra, inclua o arquivo executável na lista de Exclusões.  
    
- * Linux: [log4j-filescan](https://github.com/andalik/log4j-filescan/releases/download/v1.1.0/log4j-filescan)  
+ * Linux: [log4j-filescan](https://github.com/andalik/log4j-filescan/releases/download/v1.1.1/log4j-filescan)  
 
 No Linux, via console, você também pode utilizar o wget para obter o binário:  
 
 ```bash
-wget https://github.com/andalik/log4j-filescan/releases/download/v1.0.0/log4j-filescan -O log4j-filescan
+wget https://github.com/andalik/log4j-filescan/releases/download/v1.1.1/log4j-filescan -O log4j-filescan
 chmod +x log4j-filescan
 sudo ./log4j-filescan
 ```
