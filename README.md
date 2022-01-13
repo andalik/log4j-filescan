@@ -31,7 +31,7 @@ Para facilitar ainda mais, compilamos tudo e disponibilizamos um binário execut
 Basta baixar a versão para seu Sistema Operacional, abrir o prompt de comando e executar:  
 
  * Windows: [log4j-filescan.exe](https://github.com/andalik/log4j-filescan/releases/download/v1.1.1/log4j-filescan.exe)  
-   IMPORTANTE: Devido o uso do Pyinstaller para empacotar tudo em um executável, alguns antivirus podem disparar um alerta falso-positivo. Caso ocorra, inclua o arquivo executável na lista de Exclusões.  
+   <span style="color:red">IMPORTANTE: Devido o uso do Pyinstaller para empacotar tudo em um executável, alguns antivirus podem disparar um alerta falso-positivo. Caso ocorra, inclua o arquivo executável na lista de Exclusões.</span>  
    
  * Linux: [log4j-filescan](https://github.com/andalik/log4j-filescan/releases/download/v1.1.1/log4j-filescan)  
 
