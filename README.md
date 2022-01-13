@@ -16,8 +16,8 @@ A varredura é realizada recursivamente tanto em disco quanto dentro de arquivos
 
 Para otimizar a velocidade da varredura, a busca ocorre SOMENTE nos arquivos relacionados ao problema:
 
- * Todos os arquivos com extensão `Java ARchive`:
-    *  `*.jar`, `*.war`, `*.ear`
+ * Todos os arquivos com extensão `Java ARchive` (inclusive em arquivos compactados com zip):
+    *  `*.jar`, `*.war`, `*.ear` e `*.zip`
 
 Se um arquivo com uma das extensões mencionadas acima é localizado, ocorre a varredura dos arquivos internos (tudo em memória).
 
